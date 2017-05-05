@@ -24,6 +24,7 @@ public:
 // Implémentation
 protected:
 	HICON m_hIcon;
+	int nombre;
 
 	// Fonctions générées de la table des messages
 	virtual BOOL OnInitDialog();
