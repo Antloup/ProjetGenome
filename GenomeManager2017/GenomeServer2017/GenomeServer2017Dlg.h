@@ -25,7 +25,6 @@ public:
 protected:
 	HICON m_hIcon;
 
-
 	// Fonctions générées de la table des messages
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
