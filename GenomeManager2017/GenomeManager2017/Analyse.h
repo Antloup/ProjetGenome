@@ -8,11 +8,10 @@ using namespace std;
 class Analyse
 {
 public:
-	Analyse();
-	Analyse(ifstream fichier);
+	
+	Analyse(string nomFichier);
 	~Analyse();
 
 private:
 	list <string> * genome;
 };
-
