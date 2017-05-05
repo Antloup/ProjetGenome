@@ -1,13 +1,14 @@
 #pragma once
 #include <list>
+using namespace std;
 class Maladie
 {
 public:
-	Maladie();
+	Maladie(string _nom, list<string>* _mots);
 	~Maladie();
 
 protected:
 	string nom;
-	list<string> mots;
+	list<string>* mots;
 };
 
