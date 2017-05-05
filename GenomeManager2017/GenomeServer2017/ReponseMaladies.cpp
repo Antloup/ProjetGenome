@@ -2,9 +2,8 @@
 #include "ReponseMaladies.h"
 
 
-ReponseMaladies::ReponseMaladies(string _client, list<Maladie>* _listeMaladies )
+ReponseMaladies::ReponseMaladies(string _client, list<Maladie>* _listeMaladies ) : Reponse(_client)
 {
-	client = _client;
 	listeMaladies = _listeMaladies;
 }
 

@@ -1,9 +1,8 @@
 #include "stdafx.h"
 #include "ReponseDiagnostique.h"
 
-ReponseDiagnostique::ReponseDiagnostique(string _client,list<pair<Maladie, bool>>* _listeResultats)
+ReponseDiagnostique::ReponseDiagnostique(string _client,list<pair<Maladie, bool>>* _listeResultats) : Reponse(_client)
 {
-	client = _client;
 	listeResultats = _listeResultats;
 }
 
