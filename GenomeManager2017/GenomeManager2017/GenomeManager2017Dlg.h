@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "afxwin.h"
 
 
 // boîte de dialogue CGenomeManager2017Dlg
@@ -31,4 +32,11 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnLbnSelchangeList3();
+	CListBox m_clbMaladies;
+	CListBox m_clbAnalyse;
+	afx_msg void OnBnClickedButton1();
+	void moveItemTo(CListBox& source, CListBox& destination);
+	afx_msg void OnLbnSelchangeList1();
 };
