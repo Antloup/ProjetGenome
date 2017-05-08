@@ -64,6 +64,7 @@ BEGIN_MESSAGE_MAP(CGenomeServer2017Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeServer2017Dlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +153,9 @@ HCURSOR CGenomeServer2017Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CGenomeServer2017Dlg::OnBnClickedButton1()
+{
+	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
