@@ -2,6 +2,8 @@
 #include "Analyse.h"
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <sstream>
 
 
 
@@ -9,7 +11,7 @@ Analyse::Analyse(string nomFichier)
 {
 	ifstream fichier (nomFichier.c_str(), ios::in);
 	string mot;
-	fichier >> mot;
+	getline(fichier,mot);
 	genome = new list<string>;
 	if (mot != "MA v1.0")
 	{
@@ -27,4 +29,9 @@ Analyse::Analyse(string nomFichier)
 Analyse::~Analyse()
 {
 	delete genome;
+}
+
+list<string> * Analyse::getGenome()
+{
+	return genome;
 }
