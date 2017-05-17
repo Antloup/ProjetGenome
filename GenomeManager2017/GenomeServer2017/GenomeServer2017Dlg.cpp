@@ -6,11 +6,18 @@
 #include "GenomeServer2017.h"
 #include "GenomeServer2017Dlg.h"
 #include "afxdialogex.h"
+#include <fstream>
+#include <string>
+#include "Maladie.h"
+#include <iostream>
+#include <sstream>
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
+using namespace std;
 
 // boîte de dialogue CAboutDlg utilisée pour la boîte de dialogue 'À propos de' pour votre application
 
@@ -65,6 +72,7 @@ BEGIN_MESSAGE_MAP(CGenomeServer2017Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeServer2017Dlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON_LOAD_FILE, &CGenomeServer2017Dlg::OnBnClickedButtonLoadFile)
 END_MESSAGE_MAP()
 
 
@@ -158,4 +166,40 @@ HCURSOR CGenomeServer2017Dlg::OnQueryDragIcon()
 void CGenomeServer2017Dlg::OnBnClickedButton1()
 {
 	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CGenomeServer2017Dlg::OnBnClickedButtonLoadFile()
+{
+	ifstream fichier("chemin", ios::in);
+	string ligne;
+	getline(fichier, ligne);
+	list<Maladie> * maladies = new list<Maladie>();
+	if (ligne != "MA v1.0")
+	{
+		cerr << "Ce fichier n'est pas un dictionnaire." << endl;
+	}
+	else
+	{
+		string nom;
+		string mot;
+
+		while (getline(fichier, nom, ';'))
+		{
+			list<string> * mots = new list<string>();
+			getline(fichier, ligne);
+			istringstream iss(ligne);
+
+			while (getline(iss, mot, ';'))
+			{
+				mots->push_back(mot);
+			}
+
+			Maladie maladie = Maladie(nom, mots);
+			maladies->push_back(maladie);
+		}
+		
+	}
+
+	// affeccter maladies au serveur à l'aide d'un setter
 }
