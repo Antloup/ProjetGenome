@@ -11,7 +11,7 @@ namespace GenomeServerUnitTest
 		
 		TEST_METHOD(TestMethod1)
 		{
-			// TODO: Ici, votre code de test
+			Assert::AreEqual(0, 0);
 		}
 
 	};
