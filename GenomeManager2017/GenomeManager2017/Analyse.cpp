@@ -11,7 +11,7 @@ Analyse::Analyse(string nomFichier)
 	string mot;
 	fichier >> mot;
 	genome = new list<string>;
-	if (mot != "Genome")
+	if (mot != "MA v1.0")
 	{
 		cerr << "Ce fichier n'est pas un génome." << endl;
 	}
