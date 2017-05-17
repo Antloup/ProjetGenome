@@ -4,6 +4,7 @@
 
 #pragma once
 #include "afxwin.h"
+#include "afxdialogex.h" // AJOUTEE
 
 
 // boîte de dialogue CGenomeManager2017Dlg
@@ -39,4 +40,5 @@ public:
 	afx_msg void OnBnClickedButton1();
 	void moveItemTo(CListBox& source, CListBox& destination);
 	afx_msg void OnLbnSelchangeList1();
+	int add(int a, int b) { return a + b; };
 };

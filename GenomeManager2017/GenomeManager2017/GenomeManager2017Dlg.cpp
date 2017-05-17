@@ -179,7 +179,7 @@ void CGenomeManager2017Dlg::OnLbnSelchangeList1()
 
 void CGenomeManager2017Dlg::OnBnClickedButton1()
 {
-	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+	// TODO: Envoie de la requete
 }
 
 void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) {
@@ -190,6 +190,6 @@ void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) 
 	if (uiSelection == LB_ERR) return;
 
 	source.GetText(uiSelection, theData);
-	destination.AddString(theData); // Ajout dans l'analyse
+	destination.AddString(theData);
 	source.DeleteString(uiSelection);
 }
