@@ -11,9 +11,8 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include <list>
-#include "Maladie.h"
 #define DEFAULT_PORT 8080
+#define DEFAULT_ANALYSE_FOLDER "analyse.txt"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -181,6 +180,7 @@ void CGenomeServer2017Dlg::OnBnClickedButton1()
 	}
 	else {
 		delete this->ss;
+		this->ss = NULL;
 		CString output("Socket détruite");
 		this->setOutput(output);
 		CString cs_button("Lancer le serveur");
@@ -199,9 +199,11 @@ void CGenomeServer2017Dlg::setOutput(CString out) {
 }
 
 
+
 void CGenomeServer2017Dlg::OnBnClickedButton2()
 {
-	ifstream fichier("chemin", ios::in);
+
+	ifstream fichier(DEFAULT_ANALYSE_FOLDER, ios::in);
 	string ligne;
 	getline(fichier, ligne);
 	list<Maladie> * maladies = new list<Maladie>();
@@ -231,5 +233,6 @@ void CGenomeServer2017Dlg::OnBnClickedButton2()
 
 	}
 
-	// affeccter maladies au serveur à l'aide d'un setter
+	this->maladies = maladies;
+	
 }

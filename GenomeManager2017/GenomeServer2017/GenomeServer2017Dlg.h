@@ -4,6 +4,8 @@
 
 #pragma once
 #include <string>
+#include <list>
+#include "Maladie.h"
 class SocketServer;
 
 
@@ -39,4 +41,7 @@ public:
 
 private:
 	SocketServer* ss;
+	std::list<Maladie>* maladies;
+public:
+	afx_msg void OnBnClickedButton2();
 };
