@@ -3,6 +3,9 @@
 //
 
 #pragma once
+#include <string>
+class SocketServer;
+
 
 
 // boîte de dialogue CGenomeServer2017Dlg
@@ -32,4 +35,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
+	void setOutput(CString out);
+
+private:
+	SocketServer* ss;
 };

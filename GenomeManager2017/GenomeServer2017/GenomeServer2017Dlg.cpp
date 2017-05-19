@@ -6,18 +6,21 @@
 #include "GenomeServer2017.h"
 #include "GenomeServer2017Dlg.h"
 #include "afxdialogex.h"
-#include <fstream>
-#include <string>
-#include "Maladie.h"
+#include "RequestHandler.h"
 #include <iostream>
 #include <sstream>
-
+#include <fstream>
+#include <string>
+#include <list>
+#include "Maladie.h"
+#define DEFAULT_PORT 8080
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 using namespace std;
+
 
 // boîte de dialogue CAboutDlg utilisée pour la boîte de dialogue 'À propos de' pour votre application
 
@@ -72,7 +75,7 @@ BEGIN_MESSAGE_MAP(CGenomeServer2017Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeServer2017Dlg::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON_LOAD_FILE, &CGenomeServer2017Dlg::OnBnClickedButtonLoadFile)
+	ON_BN_CLICKED(IDC_BUTTON2, &CGenomeServer2017Dlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -108,6 +111,7 @@ BOOL CGenomeServer2017Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Définir une petite icône
 
 	// TODO: ajoutez ici une initialisation supplémentaire
+	this->ss = NULL;
 
 	return TRUE;  // retourne TRUE, sauf si vous avez défini le focus sur un contrôle
 }
@@ -165,11 +169,37 @@ HCURSOR CGenomeServer2017Dlg::OnQueryDragIcon()
 
 void CGenomeServer2017Dlg::OnBnClickedButton1()
 {
-	// TODO: ajoutez ici le code de votre gestionnaire de notification de contrôle
+	if (this->ss == NULL) {
+		this->ss = new SocketServer(this);
+		this->ss->Create(DEFAULT_PORT);
+		this->ss->Listen();
+		CString output("Socket créée");
+		this->setOutput(output);
+		CString cs_button("Arreter le serveur");
+		SetDlgItemText(IDC_BUTTON1, cs_button);
+		
+	}
+	else {
+		delete this->ss;
+		CString output("Socket détruite");
+		this->setOutput(output);
+		CString cs_button("Lancer le serveur");
+		SetDlgItemText(IDC_BUTTON1, cs_button);
+	}
+	
+}
+
+void CGenomeServer2017Dlg::setOutput(CString out) {
+	CString text;
+	GetDlgItemText(IDC_EDIT2,text);
+	if (!text.IsEmpty()) {
+		text += "\r\n";
+	}
+	SetDlgItemText(IDC_EDIT2,text+out);
 }
 
 
-void CGenomeServer2017Dlg::OnBnClickedButtonLoadFile()
+void CGenomeServer2017Dlg::OnBnClickedButton2()
 {
 	ifstream fichier("chemin", ios::in);
 	string ligne;
@@ -198,7 +228,7 @@ void CGenomeServer2017Dlg::OnBnClickedButtonLoadFile()
 			Maladie maladie = Maladie(nom, mots);
 			maladies->push_back(maladie);
 		}
-		
+
 	}
 
 	// affeccter maladies au serveur à l'aide d'un setter
