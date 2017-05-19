@@ -8,7 +8,7 @@ public:
 	virtual ~Reponse();
 
 protected:
-	Reponse(string _client) {};
+	Reponse(string _client);
 	string client;
 };
 
