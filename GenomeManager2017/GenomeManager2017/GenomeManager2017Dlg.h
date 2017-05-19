@@ -40,5 +40,5 @@ public:
 	afx_msg void OnBnClickedButton1();
 	void moveItemTo(CListBox& source, CListBox& destination);
 	afx_msg void OnLbnSelchangeList1();
-	int add(int a, int b) { return a + b; };
+	void setOutput(CString out);
 };

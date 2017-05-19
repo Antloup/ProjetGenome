@@ -6,6 +6,8 @@
 #include "GenomeManager2017.h"
 #include "GenomeManager2017Dlg.h"
 #include "afxdialogex.h"
+#include "SocketClient.h"
+#include "ResponseHandler.h"
 #include <string>
 #include <iostream>
 
@@ -177,9 +179,12 @@ void CGenomeManager2017Dlg::OnLbnSelchangeList1()
 }
 
 
+
+
 void CGenomeManager2017Dlg::OnBnClickedButton1()
 {
-	// TODO: Envoie de la requete
+	ResponseHandler* rh = new ResponseHandler(this);
+
 }
 
 void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) {
@@ -192,4 +197,14 @@ void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) 
 	source.GetText(uiSelection, theData);
 	destination.AddString(theData);
 	source.DeleteString(uiSelection);
+}
+
+void CGenomeManager2017Dlg::setOutput(CString out)
+{
+	CString text;
+	GetDlgItemText(IDC_EDIT2, text);
+	if (!text.IsEmpty()) {
+		text += "\r\n";
+	}
+	SetDlgItemText(IDC_EDIT2, text + out);
 }
