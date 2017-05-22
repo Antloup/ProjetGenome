@@ -40,7 +40,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 			genome_string.erase(0, pos + delimiter.length());
 			if (mot != "")
 			{
-				genome.push_back(mot);
+				genome->push_back(mot);
 			}
 		}
 	}
@@ -51,7 +51,7 @@ string ParseRequestServer::getMaladie()
 	return maladie;
 }
 
-list<string> ParseRequestServer::getGenome()
+list<string>* ParseRequestServer::getGenome()
 {
 	return genome;
 }

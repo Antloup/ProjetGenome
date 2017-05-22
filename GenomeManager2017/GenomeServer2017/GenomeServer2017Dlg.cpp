@@ -166,6 +166,11 @@ HCURSOR CGenomeServer2017Dlg::OnQueryDragIcon()
 
 
 
+list<Maladie>* CGenomeServer2017Dlg::getMaladies()
+{
+	return maladies;
+}
+
 void CGenomeServer2017Dlg::OnBnClickedButton1()
 {
 	if (this->ss == NULL) {
@@ -236,3 +241,5 @@ void CGenomeServer2017Dlg::OnBnClickedButton2()
 	this->maladies = maladies;
 	
 }
+
+

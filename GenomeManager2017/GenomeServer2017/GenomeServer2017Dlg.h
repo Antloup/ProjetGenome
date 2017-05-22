@@ -36,6 +36,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
+	list<Maladie>* getMaladies();
 	afx_msg void OnBnClickedButton1();
 	void setOutput(CString out);
 
