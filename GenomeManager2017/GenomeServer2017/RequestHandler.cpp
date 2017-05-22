@@ -15,7 +15,7 @@ string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * 
 	for (list<Maladie>::iterator itServeur = serveurMaladies->begin(); itServeur != serveurMaladies->end(); ++itServeur)
 	{
 		bool malade = true;
-		for (list<string>::iterator itServeurMots = itServeur->getMots()->begin(); itServeurMots != itServeur->getMots->end(); ++itServeurMots)
+		for (list<string>::iterator itServeurMots = itServeur->getMots()->begin(); itServeurMots != itServeur->getMots()->end(); ++itServeurMots)
 		{
 			list<string>::iterator trouve = find(genome->begin(), genome->end(), *itServeurMots);
 
@@ -42,9 +42,18 @@ string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * 
 string RequestHandler::searchDesease(list<string> * genome, string maladie, list<Maladie> * serveurMaladies) {
 	// Prend en paramètre le génome, la maladie et la liste des maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
-	list<Maladie>::iterator itServeur = find(serveurMaladies->begin(), serveurMaladies->end() ,maladie);
+	list<Maladie>::iterator itServeur= serveurMaladies->begin();//= find(serveurMaladies->begin(), serveurMaladies->end() ,maladie);
+	while ( itServeur->getNom() != maladie && itServeur != serveurMaladies->end())
+	{
+		++itServeur;
+	}
 
-	for (list<string>::iterator itServeurMots = itServeur->getMots->begin(); itServeurMots != itServeur->getMots->end(); ++itServeurMots)
+	if (itServeur == serveurMaladies->end())
+	{
+		return "MA v1.0\r\nERROR";
+	}
+
+	for (list<string>::iterator itServeurMots = itServeur->getMots()->begin(); itServeurMots != itServeur->getMots()->end(); ++itServeurMots)
 	{
 
 		list <string>::iterator trouve = find(genome->begin(), genome->end(), *itServeurMots);
@@ -71,9 +80,9 @@ string RequestHandler::repDiagnostique(list<string> * requeteMaladies, list<Mala
 	for (list<string>::iterator itRequete = requeteMaladies->begin(); itRequete != requeteMaladies->end(); ++itRequete)
 	{
 		bool trouve = false;
-		for (list<Maladie>::iterator itServeur = serveurMaladies->begin; itServeur != serveurMaladies->end(); ++itServeur)
+		for (list<Maladie>::iterator itServeur = serveurMaladies->begin() ; itServeur != serveurMaladies->end(); ++itServeur)
 		{
-			if (itServeur->getNom == *itRequete)
+			if (itServeur->getNom() == *itRequete)
 			{
 				trouve = true;
 				reponse += "DESEASES\r\n" + *itRequete + "\r\n";

@@ -3,9 +3,11 @@
 
 #include "stdafx.h"
 #include "GenomeServer2017.h"
+#include "ParseRequestServer.h"
 #include "SocketS2C.h"
 #define BUFF_LEN 2048
 #include <string>
+#include "RequestHandler.h"
 
 
 // SocketS2C
@@ -44,7 +46,17 @@ void SocketS2C::OnReceive(int nErrorCode)
 	CString output(szBuff);
 	this->rh->getWindow()->setOutput(output);
 
+
 	//Traiter requete...
+	string req(szBuff);
+	ParseRequestServer request(req);
+	string reponse;
+
+	if (request.getType() == 0)
+	{
+		reponse = searchDesease();
+	}
+
 
 	std::string strResponse = "Response analyse...";
 	int nSentBytes = 0;

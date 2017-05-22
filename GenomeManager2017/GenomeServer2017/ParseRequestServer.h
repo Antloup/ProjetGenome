@@ -11,11 +11,12 @@ public:
 	ParseRequestServer(string genome);
 	~ParseRequestServer();
 	string getMaladie();
+	int getType();
 	list<string> getGenome();
 
 private:
 	list<string> genome;
 	string maladie;
-	bool type; //false pour CHECK ALL et true pour CHECK DESEASE
+	int type; //false pour CHECK ALL et true pour CHECK DESEASE
 };
 

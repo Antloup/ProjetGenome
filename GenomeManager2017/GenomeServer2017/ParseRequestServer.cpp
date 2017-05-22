@@ -20,15 +20,19 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 		genome_string.erase(0, pos + delimiter.length());
 		if (mot == "CHECK DISEASE")
 		{
-			type = true;
+			type = 0;
 			size_t pos = genome_string.find(delimiter);
 			string mot = genome_string.substr(0, pos);
 			genome_string.erase(0, pos + delimiter.length());
 			maladie = mot;
 		}
+		else if(mot == "GET DESEASES")
+		{
+			type = 1;
+		}
 		else
 		{
-			type = false;
+			type = 2;
 		}
 		while ((pos = genome_string.find(delimiter)) != std::string::npos)
 		{
@@ -50,6 +54,11 @@ string ParseRequestServer::getMaladie()
 list<string> ParseRequestServer::getGenome()
 {
 	return genome;
+}
+
+int ParseRequestServer::getType()
+{
+	return type;
 }
 
 ParseRequestServer::~ParseRequestServer()

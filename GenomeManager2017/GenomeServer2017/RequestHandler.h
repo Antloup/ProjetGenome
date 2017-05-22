@@ -3,7 +3,6 @@
 #include "GenomeServer2017Dlg.h"
 #include "SocketServer.h"
 #include "../GenomeManager2017/BuildRequestClient.h"
-#include "ReponseDiagnostique.h"
 
 class SocketS2C;
 class RequestHandler
