@@ -207,39 +207,48 @@ void CGenomeServer2017Dlg::setOutput(CString out) {
 
 void CGenomeServer2017Dlg::OnBnClickedButton2()
 {
-
 	ifstream fichier(DEFAULT_ANALYSE_FOLDER, ios::in);
 	string ligne;
 	getline(fichier, ligne);
 	list<Maladie> * maladies = new list<Maladie>();
-	if (ligne != "MA v1.0")
+	if (fichier.good())
 	{
-		cerr << "Ce fichier n'est pas un dictionnaire." << endl;
+		if (ligne != "MA v1.0")
+		{
+			CString output ("Ce fichier n'est pas un dictionnaire.");
+			this->setOutput(output);
+		}
+		else
+		{
+			string nom;
+			string mot;
+
+			while (getline(fichier, nom, ';'))
+			{
+				list<string> * mots = new list<string>();
+				getline(fichier, ligne);
+				istringstream iss(ligne);
+
+				while (getline(iss, mot, ';'))
+				{
+					mots->push_back(mot);
+				}
+
+				Maladie maladie = Maladie(nom, mots);
+				maladies->push_back(maladie);
+			}
+
+		}
+
+		this->maladies = maladies;
+		CString output("Le fichier a été chargé correctement");
+		this->setOutput(output);
 	}
 	else
 	{
-		string nom;
-		string mot;
-
-		while (getline(fichier, nom, ';'))
-		{
-			list<string> * mots = new list<string>();
-			getline(fichier, ligne);
-			istringstream iss(ligne);
-
-			while (getline(iss, mot, ';'))
-			{
-				mots->push_back(mot);
-			}
-
-			Maladie maladie = Maladie(nom, mots);
-			maladies->push_back(maladie);
-		}
-
+		CString output("Erreur dans l'ouverture du fichier");
+		this->setOutput(output);
 	}
-
-	this->maladies = maladies;
-	
 }
 
 

@@ -73,7 +73,7 @@ string RequestHandler::searchDesease(list<string> * genome, string maladie, list
 
 string RequestHandler::repDiagnostique(list<Maladie> * serveurMaladies)
 {
-	// Prend en paramètre la liste des maladies de la requete et du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
+	// Prend en paramètre la liste des maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
 	string reponse = "MA v1.0\r\n";
 			

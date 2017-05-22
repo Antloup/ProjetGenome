@@ -182,6 +182,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="analyse.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

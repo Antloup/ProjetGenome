@@ -49,9 +49,10 @@ void SocketS2C::OnReceive(int nErrorCode)
 
 	//Traiter requete...
 	string req(szBuff);
+
 	ParseRequestServer request(req);
 	string strResponse;
-
+	
 	if (request.getType() == 0)
 	{
 		strResponse = rh->searchDesease(request.getGenome(), request.getMaladie(), rh->getWindow()->getMaladies());
@@ -68,10 +69,9 @@ void SocketS2C::OnReceive(int nErrorCode)
 	{
 		strResponse = "MA v1.0\r\nERROR : Format de requête inconnu\r\n\r\n";
 	}
-
+	
 
 	int nSentBytes = 0;
-
 	const char* pszBuff = strResponse.c_str();
 	int nResponseSize = strResponse.length();
 
