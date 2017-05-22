@@ -54,11 +54,11 @@ void SocketS2C::OnReceive(int nErrorCode)
 
 	if (request.getType() == 0)
 	{
-		strResponse = rh->searchDesease(request.getGenome(), request.getMaladie(), rh->getWindow()->getMaladies);
+		strResponse = rh->searchDesease(request.getGenome(), request.getMaladie(), rh->getWindow()->getMaladies());
 	}
 	else if (request.getType() == 1)
 	{
-		strResponse = rh->repDiagnostique(request.getMaladie, rh->getWindow()->getMaladies());
+		strResponse = rh->repDiagnostique(rh->getWindow()->getMaladies());
 	}
 	else if (request.getType() == 2)
 	{

@@ -10,7 +10,7 @@ class RequestHandler
 public:
 	string searchAllDeseases(list<string>* genome, list<Maladie>* serveurMaladies);
 	string searchDesease(list<string>* genome, string maladie, list<Maladie>* serveurMaladies);
-	string repDiagnostique(list<string>* requeteMaladies, list<Maladie>* serveurMaladies);
+	string repDiagnostique(list<Maladie>* serveurMaladies);
 	RequestHandler(SocketServer* ss,CGenomeServer2017Dlg* w);
 	CGenomeServer2017Dlg* getWindow();
 	~RequestHandler();

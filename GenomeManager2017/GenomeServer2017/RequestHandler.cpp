@@ -71,25 +71,17 @@ string RequestHandler::searchDesease(list<string> * genome, string maladie, list
 
 
 
-string RequestHandler::repDiagnostique(list<string> * requeteMaladies, list<Maladie> * serveurMaladies)
+string RequestHandler::repDiagnostique(list<Maladie> * serveurMaladies)
 {
 	// Prend en paramètre la liste des maladies de la requete et du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
 	string reponse = "MA v1.0\r\n";
-
-	for (list<string>::iterator itRequete = requeteMaladies->begin(); itRequete != requeteMaladies->end(); ++itRequete)
-	{
-		bool trouve = false;
-		for (list<Maladie>::iterator itServeur = serveurMaladies->begin() ; itServeur != serveurMaladies->end(); ++itServeur)
-		{
-			if (itServeur->getNom() == *itRequete)
-			{
-				trouve = true;
-				reponse += "DESEASES\r\n" + *itRequete + "\r\n";
-				break;
-			}
-		}
+			
+	for (list<Maladie>::iterator itServeur = serveurMaladies->begin() ; itServeur != serveurMaladies->end(); ++itServeur)
+	{		
+		reponse += "DESEASES\r\n" + itServeur->getNom() + "\r\n";	
 	}
+	
 	reponse += "\r\n";
 	return reponse;
 }
