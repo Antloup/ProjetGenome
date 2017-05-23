@@ -47,30 +47,21 @@ void SocketS2C::OnReceive(int nErrorCode)
 	this->rh->getWindow()->setOutput(output);
 
 
-	//Traiter requete...
-	string req(szBuff);
+	//Traiter la requete
+	string req(szBuff);	
+	req = "MA v1.0\r\nCHECK DESEASE\r\ncancer\r\nACT;CG;ATCG;\r\n";
+	/*ParseRequestServer p(req);
+	for (list<string>::iterator it = p.getGenome()->begin(); it != p.getGenome()->end(); ++it)
+	{
+		string output = *it;
+		CString out (output.c_str());
+		this->rh->getWindow()->setOutput(out);
+	}*/
 
-	ParseRequestServer request(req);
-	string strResponse;
-	
-	if (request.getType() == 0)
-	{
-		strResponse = rh->searchDesease(request.getGenome(), request.getMaladie(), rh->getWindow()->getMaladies());
-	}
-	else if (request.getType() == 1)
-	{
-		strResponse = rh->repDiagnostique(rh->getWindow()->getMaladies());
-	}
-	else if (request.getType() == 2)
-	{
-		strResponse = rh->searchAllDeseases(request.getGenome(), rh->getWindow()->getMaladies());
-	}
-	else
-	{
-		strResponse = "MA v1.0\r\nERROR : Format de requête inconnu\r\n\r\n";
-	}
-	
+	string strResponse = rh->processRequest(req);
 
+
+	//Envoyer la réponse
 	int nSentBytes = 0;
 	const char* pszBuff = strResponse.c_str();
 	int nResponseSize = strResponse.length();

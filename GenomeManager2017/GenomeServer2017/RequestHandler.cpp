@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #include <algorithm>
+#include "ParseRequestServer.h"
 
 using namespace std;
 
@@ -86,7 +87,28 @@ string RequestHandler::repDiagnostique(list<Maladie> * serveurMaladies)
 	return reponse;
 }
 
-
+string RequestHandler::processRequest(string req)
+{
+	ParseRequestServer request(req);
+	string strResponse;
+	if (request.getType() == 0)
+	{
+		strResponse = searchDesease(request.getGenome(), request.getMaladie(), getWindow()->getMaladies());
+	}
+	else if (request.getType() == 1)
+	{
+		strResponse = repDiagnostique(getWindow()->getMaladies());
+	}
+	else if (request.getType() == 2)
+	{
+		strResponse = searchAllDeseases(request.getGenome(), getWindow()->getMaladies());
+	}
+	else
+	{
+		strResponse = "MA v1.0\r\nERROR : Format de requête inconnu\r\n\r\n";
+	}
+	return strResponse;
+}
 
 
 RequestHandler::RequestHandler(SocketServer* ss, CGenomeServer2017Dlg* w)
