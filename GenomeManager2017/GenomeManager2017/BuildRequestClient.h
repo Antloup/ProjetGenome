@@ -16,6 +16,8 @@ public:
 	void requestFullAnalysis();
 	void requestSpecificAnalysis(string maladie);
 
+	void requestError();
+
 private:
 	string request;
 	string genome;

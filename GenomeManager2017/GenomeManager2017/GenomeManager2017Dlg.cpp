@@ -79,6 +79,7 @@ BEGIN_MESSAGE_MAP(CGenomeManager2017Dlg, CDialogEx)
 	ON_LBN_SELCHANGE(IDC_LIST3, &CGenomeManager2017Dlg::OnLbnSelchangeList3)
 	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeManager2017Dlg::OnBnClickedButton1)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CGenomeManager2017Dlg::OnLbnSelchangeList1)
+	ON_EN_CHANGE(IDC_EDIT3, &CGenomeManager2017Dlg::OnEnChangeEdit3)
 END_MESSAGE_MAP()
 
 
@@ -239,6 +240,14 @@ void CGenomeManager2017Dlg::setServersList(std::string filename) {
 	}
 }
 
+std::string CGenomeManager2017Dlg::getMaladie()
+{
+	CString maladie;
+	GetDlgItemText(IDC_EDIT3, maladie);
+	std::string s_maladie = CT2A((LPCTSTR)maladie);
+	return s_maladie;
+}
+
 
 /*
 void CGenomeManager2017Dlg::OnBnClickedButton2()
@@ -266,3 +275,13 @@ void CGenomeManager2017Dlg::OnBnClickedButton2()
 	}
 }
 */
+
+void CGenomeManager2017Dlg::OnEnChangeEdit3()
+{
+	// TODO:  S'il s'agit d'un contrôle RICHEDIT, le contrôle ne
+	// envoyez cette notification sauf si vous substituez CDialogEx::OnInitDialog()
+	// fonction et appelle CRichEditCtrl().SetEventMask()
+	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
+
+	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
+}

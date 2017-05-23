@@ -3,6 +3,7 @@
 #include <string>
 #include "BuildRequestClient.h"
 
+class SocketClient;
 class ResponseHandler
 {
 public:
