@@ -1,0 +1,10 @@
+﻿  ParseRequestServer.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  RequestHandler.cpp
+c:\users\mathildebronnert\source\repos\projetgenome\genomemanager2017\genomeserver2017\requesthandler.cpp(118): warning C4800: 'BOOL' : valeur forcée à la valeur booléenne 'true' ou 'false' (avertissement sur les performances)
+  Génération de code en cours...
+  Ignoré... (aucune modification pertinente détectée)
+  SocketS2C.cpp
+  GenomeServer2017.vcxproj -> C:\Users\mathildebronnert\Source\Repos\ProjetGenome\GenomeManager2017\x64\Debug\GenomeServer2017.exe
+  GenomeServer2017.vcxproj -> C:\Users\mathildebronnert\Source\Repos\ProjetGenome\GenomeManager2017\x64\Debug\GenomeServer2017.pdb (Partial PDB)

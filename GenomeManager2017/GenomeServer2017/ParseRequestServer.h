@@ -14,7 +14,7 @@ public:
 	int getType();
 	list<string>* getGenome();
 
-private:
+public:
 	list<string>* genome;
 	string maladie;
 	int type; //1 pour la liste des maladies du serveur, 2 pour CHECK ALL et 0 pour CHECK DESEASE

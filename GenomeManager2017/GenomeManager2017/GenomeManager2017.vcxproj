@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FBE01CC5-3A55-474F-A837-6103A9E770FE}</ProjectGuid>
     <RootNamespace>GenomeManager2017</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <Keyword>MFCProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -186,19 +186,28 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Analyse.h" />
+    <ClInclude Include="BuildRequestClient.h" />
     <ClInclude Include="GenomeManager2017.h" />
     <ClInclude Include="GenomeManager2017Dlg.h" />
     <ClInclude Include="Gestionnaire.h" />
+    <ClInclude Include="Personne.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResponseHandler.h" />
     <ClInclude Include="Socket.h" />
+    <ClInclude Include="SocketClient.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BuildRequestClient.cpp" />
     <ClCompile Include="GenomeManager2017.cpp" />
     <ClCompile Include="GenomeManager2017Dlg.cpp" />
     <ClCompile Include="Gestionnaire.cpp" />
+    <ClCompile Include="Personne.cpp" />
+    <ClCompile Include="ResponseHandler.cpp" />
     <ClCompile Include="Socket.cpp" />
+    <ClCompile Include="SocketClient.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

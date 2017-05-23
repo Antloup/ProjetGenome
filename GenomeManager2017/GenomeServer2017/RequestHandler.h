@@ -11,6 +11,7 @@ public:
 	string searchAllDeseases(list<string>* genome, list<Maladie>* serveurMaladies);
 	string searchDesease(list<string>* genome, string maladie, list<Maladie>* serveurMaladies);
 	string repDiagnostique(list<Maladie>* serveurMaladies);
+	string processRequest(string req);
 	RequestHandler(SocketServer* ss,CGenomeServer2017Dlg* w);
 	CGenomeServer2017Dlg* getWindow();
 	~RequestHandler();

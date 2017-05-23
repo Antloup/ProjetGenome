@@ -4,6 +4,8 @@
 
 ParseRequestServer::ParseRequestServer(string genome_string)
 {
+	genome = new list<string>();
+
 	string delimiter = "\r\n";
 	size_t pos = genome_string.find(delimiter);
 	string mot = genome_string.substr(0, pos);
@@ -18,7 +20,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 		size_t pos = genome_string.find(delimiter);
 		string mot = genome_string.substr(0, pos);
 		genome_string.erase(0, pos + delimiter.length());
-		if (mot == "CHECK DISEASE")
+		if (mot == "CHECK DESEASE")
 		{
 			type = 0;
 			size_t pos = genome_string.find(delimiter);
@@ -34,6 +36,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 		{
 			type = 2;
 		}
+		delimiter = ";";
 		while ((pos = genome_string.find(delimiter)) != std::string::npos)
 		{
 			string mot = genome_string.substr(0, pos);
