@@ -8,12 +8,18 @@
 #include "afxdialogex.h"
 #include "SocketClient.h"
 #include "ResponseHandler.h"
+#include <fstream>
 #include <string>
 #include <iostream>
+
+class ResponseHandler;
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
+#define DEFAULT_SERVERS_LIST_FILE "servers_list.txt"
+#define DEFAULT_SERVER_ADDRESS "127.0.0.1"
 
 
 // boîte de dialogue CAboutDlg utilisée pour la boîte de dialogue 'À propos de' pour votre application
@@ -107,6 +113,8 @@ BOOL CGenomeManager2017Dlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Définir une grande icône
 	SetIcon(m_hIcon, FALSE);		// Définir une petite icône
 
+	setServersList(DEFAULT_SERVERS_LIST_FILE);
+
 	// TODO: ajoutez ici une initialisation supplémentaire
 	CString x = L"Maladie1";
 	m_clbMaladies.AddString(x);
@@ -114,6 +122,7 @@ BOOL CGenomeManager2017Dlg::OnInitDialog()
 	m_clbMaladies.AddString(x);
 	x = L"MaladieN";
 	m_clbMaladies.AddString(x);
+	m_analyse = NULL;
 	return TRUE;  // retourne TRUE, sauf si vous avez défini le focus sur un contrôle
 }
 
@@ -184,7 +193,6 @@ void CGenomeManager2017Dlg::OnLbnSelchangeList1()
 void CGenomeManager2017Dlg::OnBnClickedButton1()
 {
 	ResponseHandler* rh = new ResponseHandler(this);
-
 }
 
 void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) {
@@ -208,3 +216,53 @@ void CGenomeManager2017Dlg::setOutput(CString out)
 	}
 	SetDlgItemText(IDC_EDIT2, text + out);
 }
+
+CString CGenomeManager2017Dlg::getFile() {
+	CString file;
+	GetDlgItemText(IDC_EDIT1, file);
+	return file;
+}
+
+void CGenomeManager2017Dlg::setServersList(std::string filename) {
+	if (m_servers != NULL) {
+		delete m_servers;
+	}
+	m_servers = new std::list<std::string>();
+	std::ifstream file(filename);
+	std::string str;
+	while (std::getline(file, str))
+	{
+		m_servers->push_back(str);
+	}
+	if (m_servers->size() == 0) {
+		m_servers->push_back(DEFAULT_SERVER_ADDRESS);
+	}
+}
+
+
+/*
+void CGenomeManager2017Dlg::OnBnClickedButton2()
+{
+	CString filename;
+	GetDlgItemText(IDC_EDIT1, filename);
+	m_analyse = new std::ifstream(filename);
+	if (m_analyse->is_open())
+	{
+		std::string line;
+		std::getline(*m_analyse, line);
+		setOutput(L"Analyse chargée");
+
+		if (line == "MA v1.0") {
+			setOutput(L"Analyse conforme");
+		}
+		else {
+			setOutput(L"Analyse non conforme");
+		}
+
+		m_analyse->close();
+	}
+	else {
+		setOutput(L"Erreur ouverture fichier");
+	}
+}
+*/

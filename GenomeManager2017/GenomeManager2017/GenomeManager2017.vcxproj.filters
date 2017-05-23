@@ -33,10 +33,13 @@
     <ClInclude Include="Resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Socket.h">
+    <ClInclude Include="ResponseHandler.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Gestionnaire.h">
+    <ClInclude Include="SocketClient.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildRequestClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Analyse.h">
@@ -65,10 +68,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Socket.cpp">
+    <ClCompile Include="ResponseHandler.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Gestionnaire.cpp">
+    <ClCompile Include="SocketClient.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildRequestClient.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="BuildRequestClient.cpp">
