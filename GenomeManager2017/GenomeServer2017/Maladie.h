@@ -5,13 +5,13 @@ class Maladie
 {
 public:
 	string getNom();
-	list<string> * getMots();
-	Maladie(string _nom, list<string>* _mots);
+	list<string> getMots();
+	Maladie(string _nom, list<string> _mots);
 	~Maladie();
 
 protected:
 	string nom;
-	list<string>* mots;
+	list<string> mots;
 	//Test
 };
 

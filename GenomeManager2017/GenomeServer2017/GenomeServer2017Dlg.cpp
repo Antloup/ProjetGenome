@@ -225,13 +225,13 @@ void CGenomeServer2017Dlg::OnBnClickedButton2()
 
 			while (getline(fichier, nom, ';'))
 			{
-				list<string> * mots = new list<string>();
+				list<string> mots;
 				getline(fichier, ligne);
 				istringstream iss(ligne);
 
 				while (getline(iss, mot, ';'))
 				{
-					mots->push_back(mot);
+					mots.push_back(mot);
 				}
 
 				Maladie maladie = Maladie(nom, mots);

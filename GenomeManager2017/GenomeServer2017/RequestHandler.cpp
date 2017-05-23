@@ -16,7 +16,7 @@ string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * 
 	for (list<Maladie>::iterator itServeur = serveurMaladies->begin(); itServeur != serveurMaladies->end(); ++itServeur)
 	{
 		bool malade = true;
-		for (list<string>::iterator itServeurMots = itServeur->getMots()->begin(); itServeurMots != itServeur->getMots()->end(); ++itServeurMots)
+		for (list<string>::iterator itServeurMots = itServeur->getMots().begin(); itServeurMots != itServeur->getMots().end(); ++itServeurMots)
 		{
 			list<string>::iterator trouve = find(genome->begin(), genome->end(), *itServeurMots);
 
@@ -54,7 +54,7 @@ string RequestHandler::searchDesease(list<string> * genome, string maladie, list
 		return "MA v1.0\r\nERROR";
 	}
 
-	for (list<string>::iterator itServeurMots = itServeur->getMots()->begin(); itServeurMots != itServeur->getMots()->end(); ++itServeurMots)
+	for (list<string>::iterator itServeurMots = itServeur->getMots().begin(); itServeurMots != itServeur->getMots().end(); ++itServeurMots)
 	{
 
 		list <string>::iterator trouve = find(genome->begin(), genome->end(), *itServeurMots);
