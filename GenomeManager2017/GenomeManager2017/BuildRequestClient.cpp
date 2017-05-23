@@ -24,7 +24,7 @@ BuildRequestClient::BuildRequestClient(string nomFichier)
 	}
 }
 
-BuildRequestClient::~BuildRequestClient(){}
+BuildRequestClient::~BuildRequestClient() {}
 
 string BuildRequestClient::getRequest()
 {
@@ -46,4 +46,8 @@ void BuildRequestClient::requestSpecificAnalysis(string maladie)
 {
 	request = "MA v1.0\r\nCHECK DISEASE\r\n" + maladie + "\r\n" + genome;
 
+}
+
+void BuildRequestClient::requestError() {
+	request = "MA v1.0\r\nERROR\r\n";
 }

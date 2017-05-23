@@ -5,6 +5,9 @@
 #pragma once
 #include "afxwin.h"
 #include "afxdialogex.h" // AJOUTEE
+#include <fstream>
+#include <list>
+#include <string>
 
 
 // boîte de dialogue CGenomeManager2017Dlg
@@ -26,6 +29,7 @@ public:
 // Implémentation
 protected:
 	HICON m_hIcon;
+	std::list<std::string>* m_servers;
 
 	// Fonctions générées de la table des messages
 	virtual BOOL OnInitDialog();
@@ -37,8 +41,12 @@ public:
 	afx_msg void OnLbnSelchangeList3();
 	CListBox m_clbMaladies;
 	CListBox m_clbAnalyse;
+	std::ifstream* m_analyse;
 	afx_msg void OnBnClickedButton1();
 	void moveItemTo(CListBox& source, CListBox& destination);
 	afx_msg void OnLbnSelchangeList1();
 	void setOutput(CString out);
+	CString getFile();
+	void setServersList(std::string filename);
+	std::string getMaladie();
 };

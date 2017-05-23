@@ -49,8 +49,10 @@ void SocketClient::OnReceive(int nErrorCode)
 	}
 
 	szBuff[nReceivedSize] = '\0';
-	CString output(szBuff);
-	rh->getWindow()->setOutput(output);
+	std::string response(szBuff);
+
+	//ResponseHandler 
+	rh->processResponse(response);
 
 	CAsyncSocket::OnReceive(nErrorCode);
 }
