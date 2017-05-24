@@ -111,6 +111,7 @@ BOOL CGenomeServer2017Dlg::OnInitDialog()
 
 	// TODO: ajoutez ici une initialisation supplémentaire
 	this->ss = NULL;
+	LoadFile();
 
 	return TRUE;  // retourne TRUE, sauf si vous avez défini le focus sur un contrôle
 }
@@ -203,10 +204,7 @@ void CGenomeServer2017Dlg::setOutput(CString out) {
 	SetDlgItemText(IDC_EDIT2,text+out);
 }
 
-
-
-void CGenomeServer2017Dlg::OnBnClickedButton2()
-{
+void CGenomeServer2017Dlg::LoadFile() {
 	ifstream fichier(DEFAULT_ANALYSE_FOLDER, ios::in);
 	string ligne;
 	getline(fichier, ligne);
@@ -215,7 +213,7 @@ void CGenomeServer2017Dlg::OnBnClickedButton2()
 	{
 		if (ligne != "MA v1.0")
 		{
-			CString output ("Ce fichier n'est pas un dictionnaire.");
+			CString output("Ce fichier n'est pas un dictionnaire.");
 			this->setOutput(output);
 		}
 		else
@@ -249,6 +247,11 @@ void CGenomeServer2017Dlg::OnBnClickedButton2()
 		CString output("Erreur dans l'ouverture du fichier");
 		this->setOutput(output);
 	}
+}
+
+void CGenomeServer2017Dlg::OnBnClickedButton2()
+{
+	LoadFile();
 }
 
 

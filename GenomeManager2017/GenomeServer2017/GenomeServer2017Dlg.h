@@ -40,6 +40,8 @@ public:
 	afx_msg void OnBnClickedButton1();
 	void setOutput(CString out);
 
+	void LoadFile();
+
 private:
 	SocketServer* ss;
 	std::list<Maladie>* maladies;
