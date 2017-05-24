@@ -32,7 +32,7 @@ string BuildRequestClient::getRequest()
 
 void BuildRequestClient::requestDiseases()
 {
-	request = "MA v1.0\r\nGET DESEASES\r\n\r\n";
+	request = "MA v1.0\r\nGET DISEASES\r\n\r\n";
 }
 
 void BuildRequestClient::requestFullAnalysis()
@@ -43,7 +43,7 @@ void BuildRequestClient::requestFullAnalysis()
 
 void BuildRequestClient::requestSpecificAnalysis(string maladie)
 {
-	request = "MA v1.0\r\nCHECK DESEASE\r\n" + maladie + "\r\n" + genome + "\r\n\r\n";
+	request = "MA v1.0\r\nCHECK DISEASE\r\n" + maladie + "\r\n" + genome + "\r\n\r\n";
 
 }
 

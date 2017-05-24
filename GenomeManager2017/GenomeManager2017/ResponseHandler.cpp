@@ -57,7 +57,7 @@ void ResponseHandler::processResponse(std::string response)
 		return;
 	}
 	std::getline(f_response, line);
-	if (line == "DESEASES\r") { // Le serveur a envoyé sa liste de maladie
+	if (line == "DISEASES\r") { // Le serveur a envoyé sa liste de maladie
 		string maladie = "";
 		while (std::getline(f_response, line)) {
 			line = line.substr(0, line.length()-1);
@@ -82,15 +82,15 @@ void ResponseHandler::processResponse(std::string response)
 	}
 
 	else if (window->getMaladie() != "") {
-		if (line == "DESEASE " + window->getMaladie() + "\r") { // Le serveur a envoyé une réponse
-			string haveDesease;
-			std::getline(f_response, haveDesease);
+		if (line == "DISEASE " + window->getMaladie() + "\r") { // Le serveur a envoyé une réponse
+			string haveDisease;
+			std::getline(f_response, haveDisease);
 			CString output;
-			if (haveDesease == "<1>\r") {
+			if (haveDisease == "<1>\r") {
 				string s_output = "Vous avez la maladie suivante : " + window->getMaladie() + ".\r\n";
 				output = s_output.c_str();
 			}
-			else if (haveDesease == "<0>\r") {
+			else if (haveDisease == "<0>\r") {
 				output = "Vous n'avez pas la maladie.\r\n";
 			}
 			else {
