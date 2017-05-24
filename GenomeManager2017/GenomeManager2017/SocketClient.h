@@ -3,7 +3,7 @@
 #include "ResponseHandler.h"
 // Cible de la commande Socket
 
-class SocketClient : public CAsyncSocket
+class SocketClient : public CSocket
 {
 public:
 	SocketClient(ResponseHandler* rh);

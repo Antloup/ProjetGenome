@@ -9,12 +9,18 @@ class ResponseHandler
 {
 public:
 	ResponseHandler(CGenomeManager2017Dlg* w);
+	ResponseHandler(string m,string f);
 	~ResponseHandler();
+	void Init();
 	CGenomeManager2017Dlg* getWindow();
-	void processResponse(std::string response);
+	string processResponse(std::string response);
+	BuildRequestClient* getBrc();
+	string getMaladie();
 private:
 	CGenomeManager2017Dlg* window;
 	SocketClient* sc;
 	BuildRequestClient* brc;
+	string maladie;
+	string file;
 };
 

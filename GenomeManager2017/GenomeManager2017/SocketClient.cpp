@@ -31,7 +31,7 @@ void SocketClient::OnAccept(int nErrorCode)
 {
 	// TODO: ajoutez ici votre code spécialisé et/ou l'appel de la classe de base
 
-	CAsyncSocket::OnAccept(nErrorCode);
+	CSocket::OnAccept(nErrorCode);
 }
 
 
@@ -54,5 +54,5 @@ void SocketClient::OnReceive(int nErrorCode)
 	//ResponseHandler 
 	rh->processResponse(response);
 
-	CAsyncSocket::OnReceive(nErrorCode);
+	CSocket::OnReceive(nErrorCode);
 }
