@@ -32,7 +32,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 		{
 			type = 1;
 		}
-		else
+		else if(mot ==  "CHECK ALL")
 		{
 			type = 2;
 		}
