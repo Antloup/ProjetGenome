@@ -11,7 +11,7 @@ namespace GenomeServerUnitTest
 	{
 	public:
 
-		string path_test_file = "GenomeTest";
+		string path_test_file = "GenomeTest.txt";
 		BuildRequestClient builder_test;
 		string string_test;
 
