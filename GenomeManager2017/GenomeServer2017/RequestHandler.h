@@ -12,7 +12,7 @@ public:
 	string searchDisease(list<string>* genome, string maladie, list<Maladie>* serveurMaladies);
 	string repDiagnostique(list<Maladie>* serveurMaladies);
 	string processRequest(string req);
-	RequestHandler(SocketServer* ss,CGenomeServer2017Dlg* w);
+	RequestHandler(SocketServer* ss = NULL,CGenomeServer2017Dlg* w = NULL);
 	CGenomeServer2017Dlg* getWindow();
 	~RequestHandler();
 

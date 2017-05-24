@@ -43,18 +43,28 @@ string RequestHandler::searchAllDiseases(list<string> * genome, list<Maladie> * 
 string RequestHandler::searchDisease(list<string> * genome, string maladie, list<Maladie> * serveurMaladies) {
 	// Prend en paramètre le génome, la maladie et la liste des maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
-	list<Maladie>::iterator itServeur= serveurMaladies->begin();//= find(serveurMaladies->begin(), serveurMaladies->end() ,maladie);
-	while ( itServeur->getNom() != maladie && itServeur != serveurMaladies->end())
+	list<Maladie>::iterator itServeur= serveurMaladies->begin();
+	/*while ( itServeur->getNom() != maladie && itServeur != serveurMaladies->end())
 	{
 		++itServeur;
-	}
+	}*/
 
-	if (itServeur == serveurMaladies->end())
+	bool trouve = 0;
+
+	for (Maladie m : *serveurMaladies)
 	{
-		return "MA v1.0\r\nERROR";
+		if (m.getNom() == maladie)
+		{
+			trouve = 1;
+			break;		
+		}
 	}
 
-	//for (list<string>::iterator itServeurMots = itServeur->getMots().begin(); itServeurMots != itServeur->getMots().end(); ++itServeurMots)
+	if (!trouve)
+	{
+		return "MA v1.0\r\nERROR\r\n\r\n";
+	}
+
 	for (string it : itServeur->getMots())
 	{
 
@@ -77,11 +87,11 @@ string RequestHandler::repDiagnostique(list<Maladie> * serveurMaladies)
 {
 	// Prend en paramètre la liste des maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
-	string reponse = "MA v1.0\r\n";
+	string reponse = "MA v1.0\r\nDISEASES\r\n";
 			
 	for (list<Maladie>::iterator itServeur = serveurMaladies->begin() ; itServeur != serveurMaladies->end(); ++itServeur)
 	{		
-		reponse += "DISEASES\r\n" + itServeur->getNom() + "\r\n";	
+		reponse += itServeur->getNom() + "\r\n";	
 	}
 	
 	reponse += "\r\n";
@@ -114,9 +124,12 @@ string RequestHandler::processRequest(string req)
 
 RequestHandler::RequestHandler(SocketServer* ss, CGenomeServer2017Dlg* w)
 {
-	this->window = w;
-	this->ssc = new SocketS2C(this);
-	bool bResult = ss->Accept(*this->ssc);
+	if (ss != NULL && w != NULL)
+	{
+		this->window = w;
+		this->ssc = new SocketS2C(this);
+		bool bResult = ss->Accept(*this->ssc);
+	}
 }
 
 RequestHandler::~RequestHandler()
