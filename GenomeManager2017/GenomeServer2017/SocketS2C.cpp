@@ -49,7 +49,7 @@ void SocketS2C::OnReceive(int nErrorCode)
 
 	//Traiter la requete
 	string req(szBuff);	
-	//req = "MA v1.0\r\nCHECK DESEASE\r\ncancer\r\nACT;CG;ATCG;\r\n";
+	//req = "MA v1.0\r\nCHECK DISEASE\r\ncancer\r\nACT;CG;ATCG;\r\n";
 	/*ParseRequestServer p(req);
 	for (list<string>::iterator it = p.getGenome()->begin(); it != p.getGenome()->end(); ++it)
 	{

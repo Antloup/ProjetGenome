@@ -8,7 +8,7 @@
 
 using namespace std;
 
-string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * serveurMaladies) {
+string RequestHandler::searchAllDiseases(list<string> * genome, list<Maladie> * serveurMaladies) {
 	// Prend en paramètre le génome et la liste de maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
 	string reponse = "MA v1.0\r\n";
@@ -29,7 +29,7 @@ string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * 
 
 		if (malade == true)
 		{
-			reponse += "DESEASE " + itServeur.getNom() + "\r\n";
+			reponse += "DISEASE " + itServeur.getNom() + "\r\n";
 		}
 	}
 
@@ -40,7 +40,7 @@ string RequestHandler::searchAllDeseases(list<string> * genome, list<Maladie> * 
 
 
 
-string RequestHandler::searchDesease(list<string> * genome, string maladie, list<Maladie> * serveurMaladies) {
+string RequestHandler::searchDisease(list<string> * genome, string maladie, list<Maladie> * serveurMaladies) {
 	// Prend en paramètre le génome, la maladie et la liste des maladies du serveur, et renvoie la réponse sous forme de string, à envoyer directement par la socket
 
 	list<Maladie>::iterator itServeur= serveurMaladies->begin();//= find(serveurMaladies->begin(), serveurMaladies->end() ,maladie);
@@ -62,11 +62,11 @@ string RequestHandler::searchDesease(list<string> * genome, string maladie, list
 		
 		if (trouve == genome->end())
 		{
-			return "MA v1.0\r\nDESEASE " + maladie + "\r\n<0>\r\n\r\n";
+			return "MA v1.0\r\nDISEASE " + maladie + "\r\n<0>\r\n\r\n";
 		}
 	}
 
-	return "MA v1.0\r\nDESEASE " + maladie + "\r\n<1>\r\n\r\n";
+	return "MA v1.0\r\nDISEASE " + maladie + "\r\n<1>\r\n\r\n";
 }
 
 
@@ -81,7 +81,7 @@ string RequestHandler::repDiagnostique(list<Maladie> * serveurMaladies)
 			
 	for (list<Maladie>::iterator itServeur = serveurMaladies->begin() ; itServeur != serveurMaladies->end(); ++itServeur)
 	{		
-		reponse += "DESEASES\r\n" + itServeur->getNom() + "\r\n";	
+		reponse += "DISEASES\r\n" + itServeur->getNom() + "\r\n";	
 	}
 	
 	reponse += "\r\n";
@@ -94,7 +94,7 @@ string RequestHandler::processRequest(string req)
 	string strResponse;
 	if (request.getType() == 0)
 	{
-		strResponse = searchDesease(request.getGenome(), request.getMaladie(), getWindow()->getMaladies());
+		strResponse = searchDisease(request.getGenome(), request.getMaladie(), getWindow()->getMaladies());
 	}
 	else if (request.getType() == 1)
 	{
@@ -102,7 +102,7 @@ string RequestHandler::processRequest(string req)
 	}
 	else if (request.getType() == 2)
 	{
-		strResponse = searchAllDeseases(request.getGenome(), getWindow()->getMaladies());
+		strResponse = searchAllDiseases(request.getGenome(), getWindow()->getMaladies());
 	}
 	else
 	{

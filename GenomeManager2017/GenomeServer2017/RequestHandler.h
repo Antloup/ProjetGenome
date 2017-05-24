@@ -8,8 +8,8 @@ class SocketS2C;
 class RequestHandler
 {
 public:
-	string searchAllDeseases(list<string>* genome, list<Maladie>* serveurMaladies);
-	string searchDesease(list<string>* genome, string maladie, list<Maladie>* serveurMaladies);
+	string searchAllDiseases(list<string>* genome, list<Maladie>* serveurMaladies);
+	string searchDisease(list<string>* genome, string maladie, list<Maladie>* serveurMaladies);
 	string repDiagnostique(list<Maladie>* serveurMaladies);
 	string processRequest(string req);
 	RequestHandler(SocketServer* ss,CGenomeServer2017Dlg* w);

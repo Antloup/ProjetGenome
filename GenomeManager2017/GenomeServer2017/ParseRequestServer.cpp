@@ -20,7 +20,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 		size_t pos = genome_string.find(delimiter);
 		string mot = genome_string.substr(0, pos);
 		genome_string.erase(0, pos + delimiter.length());
-		if (mot == "CHECK DESEASE")
+		if (mot == "CHECK DISEASE")
 		{
 			type = 0;
 			size_t pos = genome_string.find(delimiter);
@@ -28,7 +28,7 @@ ParseRequestServer::ParseRequestServer(string genome_string)
 			genome_string.erase(0, pos + delimiter.length());
 			maladie = mot;
 		}
-		else if(mot == "GET DESEASES")
+		else if(mot == "GET DISEASES")
 		{
 			type = 1;
 		}
