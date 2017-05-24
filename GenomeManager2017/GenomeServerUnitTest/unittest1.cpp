@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "../GenomeServer2017/stdafx.h"
 #include "CppUnitTest.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
