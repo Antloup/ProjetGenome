@@ -22,7 +22,7 @@
     <ProjectGuid>{9004EEB5-DBEA-4C12-9B0D-1635A23570E0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GenomeManagerUnitTest</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome2\GenomeManager2017\GenomeManager2017;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome2\GenomeManager2017\GenomeManager2017\x64\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)GenomeManager2017;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)GenomeManager2017\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>GenomeManager2017Dlg.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
