@@ -38,15 +38,15 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnLbnSelchangeList3();
-	CListBox m_clbMaladies;
-	CListBox m_clbAnalyse;
 	std::ifstream* m_analyse;
 	afx_msg void OnBnClickedButton1();
 	void moveItemTo(CListBox& source, CListBox& destination);
-	afx_msg void OnLbnSelchangeList1();
 	void setOutput(CString out);
 	CString getFile();
 	void setServersList(std::string filename);
+	//list<string>* getServersList();
 	std::string getMaladie();
+	afx_msg void OnEnChangeEdit3();
+	CEdit m_edit2;
+	afx_msg void OnBnClickedButton3();
 };

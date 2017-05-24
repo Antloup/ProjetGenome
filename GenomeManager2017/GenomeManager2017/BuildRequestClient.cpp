@@ -18,9 +18,8 @@ BuildRequestClient::BuildRequestClient(string nomFichier)
 	{
 		while (getline(fichier, mot))
 		{
-			genome += mot + "\r\n";
+			genome += mot + ";";
 		}
-		genome += "\r\n";
 	}
 }
 
@@ -33,18 +32,18 @@ string BuildRequestClient::getRequest()
 
 void BuildRequestClient::requestDiseases()
 {
-	request = "MA v1.0\r\nGET DISEASES\r\n\r\n";
+	request = "MA v1.0\r\nGET DESEASES\r\n\r\n";
 }
 
 void BuildRequestClient::requestFullAnalysis()
 {
-	request = "MA v1.0\r\nCHECK ALL\r\n" + genome;
+	request = "MA v1.0\r\nCHECK ALL\r\n" + genome + "\r\n\r\n";
 
 }
 
 void BuildRequestClient::requestSpecificAnalysis(string maladie)
 {
-	request = "MA v1.0\r\nCHECK DISEASE\r\n" + maladie + "\r\n" + genome;
+	request = "MA v1.0\r\nCHECK DESEASE\r\n" + maladie + "\r\n" + genome + "\r\n\r\n";
 
 }
 

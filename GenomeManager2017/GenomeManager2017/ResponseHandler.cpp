@@ -15,7 +15,13 @@ ResponseHandler::ResponseHandler(CGenomeManager2017Dlg * w)
 	std::string file = CT2A((LPCTSTR)w->getFile());
 	BuildRequestClient* build = new BuildRequestClient(file);
 	this->brc = build;
-	this->brc->requestDiseases();
+	if (window->getMaladie() == "") {
+		this->brc->requestFullAnalysis();
+	}
+	else {
+		this->brc->requestDiseases();
+	}
+	
 	sc->Send(brc->getRequest().c_str(), strlen(brc->getRequest().c_str()));
 
 }
@@ -34,22 +40,27 @@ CGenomeManager2017Dlg* ResponseHandler::getWindow()
 void ResponseHandler::processResponse(std::string response)
 {
 	//Traiter la réponse
-	CString output(response.c_str());
-	this->getWindow()->setOutput(output);
+	string s_output = "Socket response:" + response;
+	CString output(s_output.c_str());
+
+	//this->getWindow()->setOutput(output);
 
 	std::istringstream f_response(response);
 	std::string line;
 	std::getline(f_response, line);
-	if (line != "MA v1.0") {
+	if (line != "MA v1.0\r") {
+		CString output("Erreur interne au serveur.\r\n");
+		this->getWindow()->setOutput(output);
 		brc->requestError();
 		sc->Send(brc->getRequest().c_str(), strlen(brc->getRequest().c_str()));
 		
 		return;
 	}
 	std::getline(f_response, line);
-	if (line == "DESEASES") { // Le serveur a envoyé sa liste de maladie
+	if (line == "DESEASES\r") { // Le serveur a envoyé sa liste de maladie
 		string maladie = "";
 		while (std::getline(f_response, line)) {
+			line = line.substr(0, line.length()-1);
 			if (line == window->getMaladie()) {
 				maladie = line;
 				break;
@@ -58,25 +69,57 @@ void ResponseHandler::processResponse(std::string response)
 
 		//Envoie de la maladie a analyser
 		if (maladie != "") {
+			CString output("Le serveur va analyser votre maladie.");
+			window->setOutput(output);
 			brc->requestSpecificAnalysis(maladie);
 			sc->Send(brc->getRequest().c_str(), strlen(brc->getRequest().c_str()));
+		}
+		else {
+			CString output("Le serveur ne connait pas cette maladie.\r\n");
+			window->setOutput(output);
 		}
 		
 	}
 
-	else if (line == "DESEASE "+window->getMaladie()) { // Le serveur a envoyé une réponse
-		string haveDesease;
-		std::getline(f_response, haveDesease);
-		CString output;
-		if (haveDesease == "1") {
-			output = "maladie";
+	else if (window->getMaladie() != "") {
+		if (line == "DESEASE " + window->getMaladie() + "\r") { // Le serveur a envoyé une réponse
+			string haveDesease;
+			std::getline(f_response, haveDesease);
+			CString output;
+			if (haveDesease == "<1>\r") {
+				string s_output = "Vous avez la maladie suivante : " + window->getMaladie() + ".\r\n";
+				output = s_output.c_str();
+			}
+			else if (haveDesease == "<0>\r") {
+				output = "Vous n'avez pas la maladie.\r\n";
+			}
+			else {
+				output = "Format de reponse non conforme.\r\n";
+			}
+			window->setOutput(output);
 		}
-		else if (haveDesease == "0") {
-			output = "Pas maladie";
+	}
+	else {
+		istringstream iss(line);
+		string mot;
+		string s_output;
+		std::getline(iss, mot, ' ');
+		if (mot == "\r") {
+			s_output = "Vous n'avez pas de maladie.\r\n";
 		}
 		else {
-			output = "What?";
+			s_output = "Vous avez les maladies suivantes :\r\n";
+			while (std::getline(iss, mot)) {
+				s_output += mot + "\r\n";
+				std::getline(iss, mot, ' ');
+				std::getline(iss, mot);
+			}
+			s_output += "\r\n";
 		}
+		
+
+		output = s_output.c_str();
 		window->setOutput(output);
 	}
+
 }

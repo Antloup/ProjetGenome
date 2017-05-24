@@ -2,6 +2,7 @@
 #include "GenomeManager2017Dlg.h"
 #include <string>
 #include "BuildRequestClient.h"
+#include <fstream>
 
 class SocketClient;
 class ResponseHandler

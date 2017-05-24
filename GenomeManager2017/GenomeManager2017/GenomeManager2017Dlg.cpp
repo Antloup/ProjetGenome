@@ -68,18 +68,18 @@ CGenomeManager2017Dlg::CGenomeManager2017Dlg(CWnd* pParent /*=NULL*/)
 void CGenomeManager2017Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_LIST3, m_clbMaladies);
-	DDX_Control(pDX, IDC_LIST1, m_clbAnalyse);
+	DDX_Control(pDX, IDC_EDIT2, m_edit2);
 }
 
 BEGIN_MESSAGE_MAP(CGenomeManager2017Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_LBN_SELCHANGE(IDC_LIST3, &CGenomeManager2017Dlg::OnLbnSelchangeList3)
+	
 	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeManager2017Dlg::OnBnClickedButton1)
-	ON_LBN_SELCHANGE(IDC_LIST1, &CGenomeManager2017Dlg::OnLbnSelchangeList1)
+	
 	ON_EN_CHANGE(IDC_EDIT3, &CGenomeManager2017Dlg::OnEnChangeEdit3)
+	ON_BN_CLICKED(IDC_BUTTON3, &CGenomeManager2017Dlg::OnBnClickedButton3)
 END_MESSAGE_MAP()
 
 
@@ -117,12 +117,6 @@ BOOL CGenomeManager2017Dlg::OnInitDialog()
 	setServersList(DEFAULT_SERVERS_LIST_FILE);
 
 	// TODO: ajoutez ici une initialisation supplémentaire
-	CString x = L"Maladie1";
-	m_clbMaladies.AddString(x);
-	x = L"Maladie2";
-	m_clbMaladies.AddString(x);
-	x = L"MaladieN";
-	m_clbMaladies.AddString(x);
 	m_analyse = NULL;
 	return TRUE;  // retourne TRUE, sauf si vous avez défini le focus sur un contrôle
 }
@@ -178,22 +172,20 @@ HCURSOR CGenomeManager2017Dlg::OnQueryDragIcon()
 
 
 
-void CGenomeManager2017Dlg::OnLbnSelchangeList3()
-{
-	moveItemTo(m_clbMaladies, m_clbAnalyse);
-}
-
-void CGenomeManager2017Dlg::OnLbnSelchangeList1()
-{
-	moveItemTo(m_clbAnalyse, m_clbMaladies);
-}
-
-
-
 
 void CGenomeManager2017Dlg::OnBnClickedButton1()
 {
-	ResponseHandler* rh = new ResponseHandler(this);
+	CString file;
+	GetDlgItemText(IDC_EDIT1, file);
+	ifstream fichier(file, ios::in);
+	if (fichier) { // Le fichier existe
+		ResponseHandler* rh = new ResponseHandler(this);
+	}
+	else {
+		CString output("Le fichier n'existe pas.\r\n");
+		setOutput(output);
+	}
+	
 }
 
 void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) {
@@ -240,6 +232,13 @@ void CGenomeManager2017Dlg::setServersList(std::string filename) {
 	}
 }
 
+/*
+list<string>* CGenomeManager2017Dlg::getServersList()
+{
+	return m_servers;
+}
+*/
+
 std::string CGenomeManager2017Dlg::getMaladie()
 {
 	CString maladie;
@@ -284,4 +283,10 @@ void CGenomeManager2017Dlg::OnEnChangeEdit3()
 	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
 
 	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
+}
+
+
+void CGenomeManager2017Dlg::OnBnClickedButton3()
+{
+	SetDlgItemText(IDC_EDIT2, L"");
 }

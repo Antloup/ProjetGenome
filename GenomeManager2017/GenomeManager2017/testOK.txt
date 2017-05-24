@@ -1,6 +1,6 @@
 MA v1.0
-This is a
-test
-file
-for the project
-GenomeManager2017
+CGT
+TGC
+GTGTC
+CCC
+ATCG
