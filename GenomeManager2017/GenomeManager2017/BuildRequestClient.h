@@ -22,4 +22,5 @@ public:
 private:
 	string request;
 	string genome;
+	const string const_path = "C:\\Users\\Augustin\\Source\\Repos\\ProjetGenome\\GenomeManager2017\\";
 };

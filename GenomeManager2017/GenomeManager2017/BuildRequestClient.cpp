@@ -9,9 +9,11 @@ BuildRequestClient::~BuildRequestClient() {}
 
 void BuildRequestClient::createRequest(string nomFichier)
 {
+	nomFichier = const_path + nomFichier;
 	genome = "";
 	request = "";
-	ifstream fichier(nomFichier.c_str(), ios::in);
+	ifstream fichier(nomFichier, ios::in);
+	bool test = fichier.is_open();
 	string mot;
 	getline(fichier, mot);
 	if (mot != "MA v1.0")
