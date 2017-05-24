@@ -11,12 +11,12 @@ namespace GenomeServerUnitTest
 	{
 	public:
 
-		string path_test_file = "GenomeTest.txt";
-		BuildRequestClient builder_test;
+		string path_test_file = "../GenomeTest";
 		string string_test;
 
 		TEST_METHOD(TestMethodBuilderDiseases)
 		{
+			BuildRequestClient builder_test;
 			builder_test.createRequest(path_test_file);
 
 			string_test = "MA v1.0\r\nGET DISEASES\r\n\r\n";
@@ -26,23 +26,23 @@ namespace GenomeServerUnitTest
 
 		TEST_METHOD(TestMethodBuilderFullAnalysis)
 		{
+			BuildRequestClient builder_test;
 			builder_test.createRequest(path_test_file);
 
-			string_test = "MA v1.0\r\nCHECK ALL\r\nAAAA;GGGG;TTTT;CCCC;\r\n\r\n";
+			string_test = "MA v1.0\r\CHECK ALL\r\AAAA;GGGG;TTTT;CCCC;\r\n\r\n";
 			builder_test.requestFullAnalysis();
 			Assert::AreEqual(string_test, builder_test.getRequest());
 		}
 
 		TEST_METHOD(TestMethodBuilderSpecificAnalysis)
 		{
+			BuildRequestClient builder_test;
 			builder_test.createRequest(path_test_file);
 
-			string_test = "MA v1.0\r\nCHECK DISEASE\r\nMaladieTest\r\nAAAA;GGGG;TTTT;CCCC;\r\n\r\n";
+			string_test = "MA v1.0\r\CHECK DISEASE\r\nMaladieTest\r\nAAAA;GGGG;TTTT;CCCC;\r\n\r\n";
 			builder_test.requestSpecificAnalysis("MaladieTest");
 			Assert::AreEqual(string_test, builder_test.getRequest());
 		}
-
-
 
 	};
 }
