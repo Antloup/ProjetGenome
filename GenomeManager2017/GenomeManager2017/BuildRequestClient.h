@@ -9,9 +9,10 @@ class BuildRequestClient
 {
 public:
 
-	BuildRequestClient(string nomFichier);
+	BuildRequestClient();
 	~BuildRequestClient();
 	string getRequest();
+	void createRequest(string nomFichier);
 	void requestDiseases();
 	void requestFullAnalysis();
 	void requestSpecificAnalysis(string maladie);

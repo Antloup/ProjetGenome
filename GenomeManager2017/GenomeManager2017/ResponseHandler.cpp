@@ -13,7 +13,8 @@ ResponseHandler::ResponseHandler(CGenomeManager2017Dlg * w)
 	this->sc = socket;
 	//Envoie demande maladies
 	std::string file = CT2A((LPCTSTR)w->getFile());
-	BuildRequestClient* build = new BuildRequestClient(file);
+	BuildRequestClient* build = new BuildRequestClient();
+	build->createRequest(file);
 	this->brc = build;
 	if (window->getMaladie() == "") {
 		this->brc->requestFullAnalysis();

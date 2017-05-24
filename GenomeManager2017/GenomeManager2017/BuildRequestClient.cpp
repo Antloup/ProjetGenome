@@ -3,7 +3,11 @@
 #include <fstream>
 #include <iostream>
 
-BuildRequestClient::BuildRequestClient(string nomFichier)
+BuildRequestClient::BuildRequestClient(){}
+
+BuildRequestClient::~BuildRequestClient() {}
+
+void BuildRequestClient::createRequest(string nomFichier)
 {
 	genome = "";
 	request = "";
@@ -22,8 +26,6 @@ BuildRequestClient::BuildRequestClient(string nomFichier)
 		}
 	}
 }
-
-BuildRequestClient::~BuildRequestClient() {}
 
 string BuildRequestClient::getRequest()
 {
