@@ -3,20 +3,21 @@
 #include <fstream>
 #include <iostream>
 
-BuildRequestClient::BuildRequestClient() {}
+BuildRequestClient::BuildRequestClient(){}
 
 BuildRequestClient::~BuildRequestClient() {}
 
 void BuildRequestClient::createRequest(string nomFichier)
 {
+	nomFichier = const_path + nomFichier;
 	genome = "";
 	request = "";
-	ifstream fichier(nomFichier.c_str(), ios::in);
+	ifstream fichier(nomFichier, ios::in);
 	string mot;
 	getline(fichier, mot);
 	if (mot != "MA v1.0")
 	{
-		cerr << "Ce fichier n'est pas un génome.\r\n" << endl;
+		cerr << "Ce fichier n'est pas un gÃ©nome.\r\n" << endl;
 	}
 	else
 	{
@@ -25,10 +26,6 @@ void BuildRequestClient::createRequest(string nomFichier)
 			genome += mot + ";";
 		}
 	}
-}
-void BuildRequestClient::setGenome(string g) {
-
-	genome = g;
 }
 
 string BuildRequestClient::getRequest()
