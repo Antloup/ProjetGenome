@@ -1,4 +1,3 @@
-
 #pragma once
 #include <string>
 #include <list>
@@ -17,9 +16,11 @@ public:
 	void requestDiseases();
 	void requestFullAnalysis();
 	void requestSpecificAnalysis(string maladie);
+
 	void requestError();
-	void setGenome(string g);
+
 private:
 	string request;
 	string genome;
+	const string const_path = "C:\\Users\\Augustin\\Source\\Repos\\ProjetGenome\\GenomeManager2017\\";
 };
