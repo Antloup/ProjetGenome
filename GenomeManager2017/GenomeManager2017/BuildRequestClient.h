@@ -12,6 +12,7 @@ public:
 	BuildRequestClient();
 	~BuildRequestClient();
 	string getRequest();
+	void setGenome(string g);
 	void createRequest(string nomFichier);
 	void requestDiseases();
 	void requestFullAnalysis();
@@ -22,5 +23,5 @@ public:
 private:
 	string request;
 	string genome;
-	const string const_path = "C:\\Users\\Augustin\\Source\\Repos\\ProjetGenome\\GenomeManager2017\\";
+	const string const_path = "";
 };

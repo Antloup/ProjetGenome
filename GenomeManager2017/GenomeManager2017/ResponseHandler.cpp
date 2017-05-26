@@ -131,27 +131,26 @@ string ResponseHandler::processResponse(std::string response)
 			}
 		}
 	}
-	else {
-		istringstream iss(line);
-		string mot;
+	else { // Le serveur a envoyé les maladies apres un CHECK ALL
+		std::size_t found = line.find(' '); // Trouver le 1er espace
+		found++;
+		line = line.substr(found, line.size() - found);
 		string s_output;
-		std::getline(iss, mot, ' ');
-		std::getline(iss, mot);
-		if (mot == "\r") {
+		if (line == "\r") {
 			s_output = "Vous n'avez pas de maladie.\r\n";
 		}
 		else {
 			s_output = "Vous avez les maladies suivantes :\r\n";
-			s_output += mot + "\r\n";
-			while (std::getline(iss, mot)) {
-				s_output += mot + "\r\n";
-				std::getline(iss, mot, ' ');
-				std::getline(iss, mot);
+			s_output += line + "\n";
+			while (std::getline(f_response, line)) {
+				found = line.find(' '); // Trouver le 1er espace
+				found++;
+				line = line.substr(found, line.size() - found);
+				s_output += line + "\n";
 			}
 			s_output += "\r\n";
 		}
 		
-
 		output = s_output.c_str();
 		if (window != NULL) {
 			window->setOutput(output);

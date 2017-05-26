@@ -33,6 +33,11 @@ string BuildRequestClient::getRequest()
 	return request;
 }
 
+void BuildRequestClient::setGenome(string g)
+{
+	genome = g;
+}
+
 void BuildRequestClient::requestDiseases()
 {
 	request = "MA v1.0\r\nGET DISEASES\r\n\r\n";
