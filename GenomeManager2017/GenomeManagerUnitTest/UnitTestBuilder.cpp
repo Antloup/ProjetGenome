@@ -11,7 +11,7 @@ namespace GenomeServerUnitTest
 	{
 	public:
 
-		string path_test_file = "GenomeTest.txt";
+		string path_test_file = "foo.txt";
 		BuildRequestClient builder_test;
 		string string_test;
 
@@ -27,6 +27,7 @@ namespace GenomeServerUnitTest
 		TEST_METHOD(TestMethodBuilderFullAnalysis)
 		{
 			builder_test.createRequest(path_test_file);
+			builder_test.setGenome("AAAA;GGGG;TTTT;CCCC;");
 
 			string_test = "MA v1.0\r\nCHECK ALL\r\nAAAA;GGGG;TTTT;CCCC;\r\n\r\n";
 			builder_test.requestFullAnalysis();
@@ -36,6 +37,7 @@ namespace GenomeServerUnitTest
 		TEST_METHOD(TestMethodBuilderSpecificAnalysis)
 		{
 			builder_test.createRequest(path_test_file);
+			builder_test.setGenome("AAAA;GGGG;TTTT;CCCC;");
 
 			string_test = "MA v1.0\r\nCHECK DISEASE\r\nMaladieTest\r\nAAAA;GGGG;TTTT;CCCC;\r\n\r\n";
 			builder_test.requestSpecificAnalysis("MaladieTest");

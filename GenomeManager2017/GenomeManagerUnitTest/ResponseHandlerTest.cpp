@@ -129,7 +129,7 @@ namespace GenomeManagerUnitTest
 
 			string response = "MA v1.0\r\nDISEASE Maladie1\r\nDISEASE Maladie2\r\n";
 			string output = rh->processResponse(response);
-			string output_expected = "Vous avez les maladies suivantes :\r\nMaladie1\r\nMaladie2\r\n";
+			string output_expected = "Vous avez les maladies suivantes :\r\nMaladie1\r\nMaladie2\r\n\r\n";
 
 			Assert::AreEqual(output_expected, output);
 
