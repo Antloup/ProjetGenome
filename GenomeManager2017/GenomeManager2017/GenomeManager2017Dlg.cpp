@@ -216,11 +216,16 @@ CString CGenomeManager2017Dlg::getFile() {
 	return file;
 }
 
+string CGenomeManager2017Dlg::getServerAddress()
+{
+	return m_servers->at(0);
+}
+
 void CGenomeManager2017Dlg::setServersList(std::string filename) {
 	if (m_servers != NULL) {
 		delete m_servers;
 	}
-	m_servers = new std::list<std::string>();
+	m_servers = new std::vector<std::string>();
 	std::ifstream file(filename);
 	std::string str;
 	while (std::getline(file, str))

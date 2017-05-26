@@ -16,7 +16,8 @@ SocketClient::SocketClient(ResponseHandler* rh)
 	this->rh = rh;
 	int nPort = DEFAULT_PORT;
 	this->Create();
-	this->Connect(DEFAULT_SERVER_ADDRESS, DEFAULT_PORT);
+	CString address(rh->getWindow()->getServerAddress().c_str());
+	this->Connect(address, DEFAULT_PORT);
 }
 
 SocketClient::~SocketClient()

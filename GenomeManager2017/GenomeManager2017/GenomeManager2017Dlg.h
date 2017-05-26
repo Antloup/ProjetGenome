@@ -6,7 +6,7 @@
 #include "afxwin.h"
 #include "afxdialogex.h" // AJOUTEE
 #include <fstream>
-#include <list>
+#include <vector>
 #include <string>
 
 
@@ -29,7 +29,7 @@ public:
 // Implémentation
 protected:
 	HICON m_hIcon;
-	std::list<std::string>* m_servers;
+	std::vector<std::string>* m_servers;
 
 	// Fonctions générées de la table des messages
 	virtual BOOL OnInitDialog();
@@ -43,6 +43,7 @@ public:
 	void moveItemTo(CListBox& source, CListBox& destination);
 	void setOutput(CString out);
 	CString getFile();
+	std::string getServerAddress();
 	void setServersList(std::string filename);
 	//list<string>* getServersList();
 	std::string getMaladie();
