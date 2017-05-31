@@ -50,7 +50,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -86,8 +86,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome2\GenomeManager2017;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome2\GenomeManager2017\GenomeManagerUnitTest\x64\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)GenomeManager2017;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)GenomeManager2017\x64\Debug;$(SolutionDir)GenomeServer2017\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -152,7 +152,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>GenomeManager2017Dlg.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Maladie.obj;BuildRequestClient.obj;SocketClient.obj;GenomeManager2017Dlg.obj;ResponseHandler.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
