@@ -30,6 +30,7 @@ public:
 protected:
 	HICON m_hIcon;
 	std::vector<std::string>* m_servers;
+	std::ifstream* m_analyse;
 
 	// Fonctions générées de la table des messages
 	virtual BOOL OnInitDialog();
@@ -38,16 +39,14 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	std::ifstream* m_analyse;
-	afx_msg void OnBnClickedButton1();
-	void moveItemTo(CListBox& source, CListBox& destination);
+	
+	afx_msg void OnBnClickedButtonSend();
+	afx_msg void OnBnClickedButtonClear();
+
+	CEdit m_edit2;
 	void setOutput(CString out);
 	CString getFile();
 	std::string getServerAddress();
 	void setServersList(std::string filename);
-	//list<string>* getServersList();
 	std::string getMaladie();
-	afx_msg void OnEnChangeEdit3();
-	CEdit m_edit2;
-	afx_msg void OnBnClickedButton3();
 };

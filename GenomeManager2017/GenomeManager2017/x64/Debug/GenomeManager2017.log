@@ -1,2 +1,219 @@
-﻿  GenomeManager2017.vcxproj -> C:\Users\mathildebronnert\Source\Repos\ProjetGenome\GenomeManager2017\x64\Debug\GenomeManager2017.exe
-  GenomeManager2017.vcxproj -> C:\Users\mathildebronnert\Source\Repos\ProjetGenome\GenomeManager2017\x64\Debug\GenomeManager2017.pdb (Partial PDB)
+﻿  SocketClient.cpp
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\GenomeManager2017.h
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\resource.h
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\SocketClient.h
+  Remarque : inclusion du fichier :   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\string
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\istream
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ostream
+  Remarque : inclusion du fichier :      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ios
+  Remarque : inclusion du fichier :       C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocnum
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\climits
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\yvals.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xkeycheck.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\crtdefs.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\use_ansi.h
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cmath
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtgmath.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtr1common
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdlib
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdio
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\streambuf
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xiosbase
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocale
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstring
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdexcept
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstddef
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstddef
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\initializer_list
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\eh.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_terminate.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdint
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdint.h
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\limits
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ymath.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cfloat
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cwchar
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\new
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xutility
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\utility
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\iosfwd
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xatomic0.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\typeinfo
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_typeinfo.h
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo.h
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\locale.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xfacet
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\system_error
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cerrno
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\share.h
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\ResponseHandler.h
+  Remarque : inclusion du fichier :    c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\GenomeManager2017Dlg.h
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\fstream
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector
+  Remarque : inclusion du fichier :      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory
+  Remarque : inclusion du fichier :    c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\BuildRequestClient.h
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\list
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\socketclient.cpp(42): warning C4101: 'szResponse' : variable locale non référencée
+  ResponseHandler.cpp
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\ResponseHandler.h
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\GenomeManager2017Dlg.h
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\fstream
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\istream
+  Remarque : inclusion du fichier :      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ostream
+  Remarque : inclusion du fichier :       C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ios
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocnum
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\climits
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\yvals.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xkeycheck.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\crtdefs.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\use_ansi.h
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cmath
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtgmath.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtr1common
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdlib
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdio
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\streambuf
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xiosbase
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocale
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstring
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdexcept
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstddef
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstddef
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\initializer_list
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\eh.h
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_terminate.h
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdint
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdint.h
+  Remarque : inclusion du fichier :                 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\limits
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ymath.h
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cfloat
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cwchar
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\new
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xutility
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\utility
+  Remarque : inclusion du fichier :                 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\iosfwd
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xatomic0.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\typeinfo
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_typeinfo.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\locale.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xfacet
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\system_error
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cerrno
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\share.h
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\string
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\BuildRequestClient.h
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\list
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\SocketClient.h
+  Remarque : inclusion du fichier :  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\iostream
+  Remarque : inclusion du fichier :  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sstream
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\../GenomeServer2017/Maladie.h
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(48): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(76): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(79): warning C4927: conversion non conforme ; plusieurs conversions définies par l'utilisateur ont été appliquées implicitement
+  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(79): note: lors de l'appel du constructeur 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(834): note: voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string'
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(102): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(160): warning C4927: conversion non conforme ; plusieurs conversions définies par l'utilisateur ont été appliquées implicitement
+  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\responsehandler.cpp(160): note: lors de l'appel du constructeur 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(834): note: voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string'
+  GenomeManager2017Dlg.cpp
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\GenomeManager2017.h
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\resource.h
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\GenomeManager2017Dlg.h
+  Remarque : inclusion du fichier :   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\fstream
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\istream
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ostream
+  Remarque : inclusion du fichier :      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ios
+  Remarque : inclusion du fichier :       C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocnum
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\climits
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\yvals.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xkeycheck.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\crtdefs.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\use_ansi.h
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cmath
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtgmath.h
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtr1common
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdlib
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdio
+  Remarque : inclusion du fichier :        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\streambuf
+  Remarque : inclusion du fichier :         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xiosbase
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocale
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstring
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdexcept
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\exception
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\type_traits
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstddef
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstddef
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\initializer_list
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\eh.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_terminate.h
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cstdint
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdint.h
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\limits
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ymath.h
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cfloat
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cwchar
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\new
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xutility
+  Remarque : inclusion du fichier :               C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\utility
+  Remarque : inclusion du fichier :                C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\iosfwd
+  Remarque : inclusion du fichier :              C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xatomic0.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\typeinfo
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_typeinfo.h
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo
+  Remarque : inclusion du fichier :            C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xlocinfo.h
+  Remarque : inclusion du fichier :             C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\locale.h
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xfacet
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\system_error
+  Remarque : inclusion du fichier :           C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cerrno
+  Remarque : inclusion du fichier :          C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\share.h
+  Remarque : inclusion du fichier :   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector
+  Remarque : inclusion du fichier :    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory
+  Remarque : inclusion du fichier :   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\string
+  Remarque : inclusion du fichier :  c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\SocketClient.h
+  Remarque : inclusion du fichier :   c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\ResponseHandler.h
+  Remarque : inclusion du fichier :    c:\users\anthony\documents\visual studio 2015\projects\projetgenome-master(7)\projetgenome-master\genomemanager2017\genomemanager2017\BuildRequestClient.h
+  Remarque : inclusion du fichier :     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\list
+  Remarque : inclusion du fichier :  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\iostream
+  Ignoré... (aucune modification pertinente détectée)
+  GenomeManager2017.cpp
+  GenomeManager2017.vcxproj -> C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome-master(7)\ProjetGenome-master\GenomeManager2017\x64\Debug\GenomeManager2017.exe
+  GenomeManager2017.vcxproj -> C:\Users\Anthony\Documents\Visual Studio 2015\Projects\ProjetGenome-master(7)\ProjetGenome-master\GenomeManager2017\x64\Debug\GenomeManager2017.pdb (Partial PDB)

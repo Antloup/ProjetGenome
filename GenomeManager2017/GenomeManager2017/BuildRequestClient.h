@@ -17,7 +17,6 @@ public:
 	void requestDiseases();
 	void requestFullAnalysis();
 	void requestSpecificAnalysis(string maladie);
-
 	void requestError();
 
 private:

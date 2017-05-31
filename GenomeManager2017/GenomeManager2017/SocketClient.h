@@ -11,9 +11,6 @@ public:
 	virtual void OnAccept(int nErrorCode);
 	virtual void OnReceive(int nErrorCode);
 protected:
-	std::string source;
-	std::string destination;
-	int port;
 	ResponseHandler* rh;
 };
 

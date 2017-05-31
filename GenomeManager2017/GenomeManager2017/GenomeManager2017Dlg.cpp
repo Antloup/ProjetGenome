@@ -68,7 +68,7 @@ CGenomeManager2017Dlg::CGenomeManager2017Dlg(CWnd* pParent /*=NULL*/)
 void CGenomeManager2017Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_EDIT2, m_edit2);
+	DDX_Control(pDX, IDC_EDIT_LOG, m_edit2);
 }
 
 BEGIN_MESSAGE_MAP(CGenomeManager2017Dlg, CDialogEx)
@@ -76,10 +76,8 @@ BEGIN_MESSAGE_MAP(CGenomeManager2017Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	
-	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeManager2017Dlg::OnBnClickedButton1)
-	
-	ON_EN_CHANGE(IDC_EDIT3, &CGenomeManager2017Dlg::OnEnChangeEdit3)
-	ON_BN_CLICKED(IDC_BUTTON3, &CGenomeManager2017Dlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON_SEND, &CGenomeManager2017Dlg::OnBnClickedButtonSend)
+	ON_BN_CLICKED(IDC_BUTTON_CLEAR, &CGenomeManager2017Dlg::OnBnClickedButtonClear)
 END_MESSAGE_MAP()
 
 
@@ -173,7 +171,7 @@ HCURSOR CGenomeManager2017Dlg::OnQueryDragIcon()
 
 
 
-void CGenomeManager2017Dlg::OnBnClickedButton1()
+void CGenomeManager2017Dlg::OnBnClickedButtonSend()
 {
 	CString file;
 	GetDlgItemText(IDC_EDIT1, file);
@@ -188,26 +186,14 @@ void CGenomeManager2017Dlg::OnBnClickedButton1()
 	
 }
 
-void CGenomeManager2017Dlg::moveItemTo(CListBox& source, CListBox& destination) {
-	CString theData;
-	// get the selected position of the listbox
-	UINT uiSelection = source.GetCurSel();
-
-	if (uiSelection == LB_ERR) return;
-
-	source.GetText(uiSelection, theData);
-	destination.AddString(theData);
-	source.DeleteString(uiSelection);
-}
-
 void CGenomeManager2017Dlg::setOutput(CString out)
 {
 	CString text;
-	GetDlgItemText(IDC_EDIT2, text);
+	GetDlgItemText(IDC_EDIT_LOG, text);
 	if (!text.IsEmpty()) {
 		text += "\r\n";
 	}
-	SetDlgItemText(IDC_EDIT2, text + out);
+	SetDlgItemText(IDC_EDIT_LOG, text + out);
 }
 
 CString CGenomeManager2017Dlg::getFile() {
@@ -237,61 +223,16 @@ void CGenomeManager2017Dlg::setServersList(std::string filename) {
 	}
 }
 
-/*
-list<string>* CGenomeManager2017Dlg::getServersList()
-{
-	return m_servers;
-}
-*/
-
 std::string CGenomeManager2017Dlg::getMaladie()
 {
 	CString maladie;
-	GetDlgItemText(IDC_EDIT3, maladie);
+	GetDlgItemText(IDC_EDIT_FILE, maladie);
 	std::string s_maladie = CT2A((LPCTSTR)maladie);
 	return s_maladie;
 }
 
 
-/*
-void CGenomeManager2017Dlg::OnBnClickedButton2()
+void CGenomeManager2017Dlg::OnBnClickedButtonClear()
 {
-	CString filename;
-	GetDlgItemText(IDC_EDIT1, filename);
-	m_analyse = new std::ifstream(filename);
-	if (m_analyse->is_open())
-	{
-		std::string line;
-		std::getline(*m_analyse, line);
-		setOutput(L"Analyse chargée");
-
-		if (line == "MA v1.0") {
-			setOutput(L"Analyse conforme");
-		}
-		else {
-			setOutput(L"Analyse non conforme");
-		}
-
-		m_analyse->close();
-	}
-	else {
-		setOutput(L"Erreur ouverture fichier");
-	}
-}
-*/
-
-void CGenomeManager2017Dlg::OnEnChangeEdit3()
-{
-	// TODO:  S'il s'agit d'un contrôle RICHEDIT, le contrôle ne
-	// envoyez cette notification sauf si vous substituez CDialogEx::OnInitDialog()
-	// fonction et appelle CRichEditCtrl().SetEventMask()
-	// avec l'indicateur ENM_CHANGE ajouté au masque grâce à l'opérateur OR.
-
-	// TODO:  Ajoutez ici le code de votre gestionnaire de notification de contrôle
-}
-
-
-void CGenomeManager2017Dlg::OnBnClickedButton3()
-{
-	SetDlgItemText(IDC_EDIT2, L"");
+	SetDlgItemText(IDC_EDIT_LOG, L"");
 }
