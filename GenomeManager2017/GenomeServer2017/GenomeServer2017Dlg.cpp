@@ -73,8 +73,8 @@ BEGIN_MESSAGE_MAP(CGenomeServer2017Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BUTTON1, &CGenomeServer2017Dlg::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON2, &CGenomeServer2017Dlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_EDIT_START, &CGenomeServer2017Dlg::OnBnClickedButtonStart)
+	ON_BN_CLICKED(IDC_BUTTON2, &CGenomeServer2017Dlg::OnBnClickedButtonLoad)
 END_MESSAGE_MAP()
 
 
@@ -172,7 +172,7 @@ list<Maladie>* CGenomeServer2017Dlg::getMaladies()
 	return maladies;
 }
 
-void CGenomeServer2017Dlg::OnBnClickedButton1()
+void CGenomeServer2017Dlg::OnBnClickedButtonStart()
 {
 	if (this->ss == NULL) {
 		this->ss = new SocketServer(this);
@@ -181,7 +181,7 @@ void CGenomeServer2017Dlg::OnBnClickedButton1()
 		CString output("Socket créée");
 		this->setOutput(output);
 		CString cs_button("Arreter le serveur");
-		SetDlgItemText(IDC_BUTTON1, cs_button);
+		SetDlgItemText(IDC_EDIT_START, cs_button);
 		
 	}
 	else {
@@ -190,18 +190,18 @@ void CGenomeServer2017Dlg::OnBnClickedButton1()
 		CString output("Socket détruite");
 		this->setOutput(output);
 		CString cs_button("Lancer le serveur");
-		SetDlgItemText(IDC_BUTTON1, cs_button);
+		SetDlgItemText(IDC_EDIT_START, cs_button);
 	}
 	
 }
 
 void CGenomeServer2017Dlg::setOutput(CString out) {
 	CString text;
-	GetDlgItemText(IDC_EDIT2,text);
+	GetDlgItemText(IDC_EDIT_LOG,text);
 	if (!text.IsEmpty()) {
 		text += "\r\n";
 	}
-	SetDlgItemText(IDC_EDIT2,text+out);
+	SetDlgItemText(IDC_EDIT_LOG,text+out);
 }
 
 void CGenomeServer2017Dlg::LoadFile() {
@@ -249,7 +249,7 @@ void CGenomeServer2017Dlg::LoadFile() {
 	}
 }
 
-void CGenomeServer2017Dlg::OnBnClickedButton2()
+void CGenomeServer2017Dlg::OnBnClickedButtonLoad()
 {
 	LoadFile();
 }

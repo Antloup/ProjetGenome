@@ -12,6 +12,5 @@ public:
 protected:
 	string nom;
 	list<string> mots;
-	//Test
 };
 

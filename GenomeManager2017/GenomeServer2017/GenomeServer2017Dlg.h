@@ -37,14 +37,13 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	list<Maladie>* getMaladies();
-	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedButtonStart();
+	afx_msg void OnBnClickedButtonLoad();
 	void setOutput(CString out);
-
 	void LoadFile();
 
 private:
 	SocketServer* ss;
 	std::list<Maladie>* maladies;
-public:
-	afx_msg void OnBnClickedButton2();
+
 };
